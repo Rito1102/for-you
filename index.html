@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You 💌</title>
+
   <style>
     body {
       margin: 0;
@@ -61,8 +62,17 @@
       background-color: #ddd;
       color: #333;
     }
+
+    .photo {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin: 15px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
+
 <body>
 
   <!-- SCREEN 1 -->
@@ -74,6 +84,10 @@
   <!-- SCREEN 2 -->
   <div class="card hidden" id="screen2">
     <h1>Hey... 💖</h1>
+
+    <!-- ADD YOUR IMAGE HERE -->
+    <img src="us.jpg" alt="us" class="photo">
+
     <p>
       I am really sorry for how I behaved yesterday... I know I let my emotions and overthinking take over, and that wasn’t fair to you.
       <br><br>
@@ -83,19 +97,25 @@
       <br><br>
       I don’t want us to fight like that again. I just want us… peacefully, honestly, and happily together. If you forgive me, then text me back on WhatsApp.🤍
     </p>
+
     <button class="btn" onclick="nextScreen2()">Continue 💌</button>
   </div>
 
   <!-- SCREEN 3 -->
   <div class="card hidden" id="screen3">
     <h1>One more thing... 😌</h1>
-    <p>Do you wanna have drinks with me?<br><b>Official drink date 🍷 <br> Send me the answer on DM</b></p>
+    <p>Do you wanna have drinks with me?<br><b>Official drink date 🍷</b></p>
+
     <button class="btn" onclick="showLocation()">Yes 😏</button>
     <button class="btn no" id="noBtn">No 🙈</button>
 
     <div id="result" class="hidden">
       <p>Yayyy, I’ll see you then 💖</p>
-      <a href="https://maps.app.goo.gl/mV4ChtmGdvDHFikH7" target="_blank">Open Location 📍</a>
+
+      <!-- CHANGE THIS LINK -->
+      <a href="https://maps.google.com/?q=22.5726,88.3639" target="_blank">
+        Open Location 📍
+      </a>
     </div>
   </div>
 
