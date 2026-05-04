@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 350px;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: #e60039;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .no {
+      position: absolute;
+      background-color: #ddd;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCREEN 1 -->
+  <div class="card" id="screen1">
+    <h1>Good Morning ☀️</h1>
+    <button class="btn" onclick="nextScreen()">GM 💛</button>
+  </div>
+
+  <!-- SCREEN 2 -->
+  <div class="card hidden" id="screen2">
+    <h1>Hey... 💖</h1>
+    <p>
+      I am really sorry for how I behaved yesterday... I know I let my emotions and overthinking take over, and that wasn’t fair to you.
+      <br><br>
+      I love you, and I don’t want to doubt you or make you feel uncomfortable because of my fears. I’m trying to be better, to trust more, and to control my overthinking.
+      <br><br>
+      At the same time, I just need a little more transparency from you… it helps me feel secure and calm. I hope you understand where I’m coming from.
+      <br><br>
+      I don’t want us to fight like that again. I just want us… peacefully, honestly, and happily together. 🤍
+    </p>
+    <button class="btn" onclick="nextScreen2()">Continue 💌</button>
+  </div>
+
+  <!-- SCREEN 3 -->
+  <div class="card hidden" id="screen3">
+    <h1>One more thing... 😌</h1>
+    <p>Do you wanna have drinks with me?<br><b>Official drink date 🍷 <br> Send me the answer on DM</b></p>
+    <button class="btn" onclick="showLocation()">Yes 😏</button>
+    <button class="btn no" id="noBtn">No 🙈</button>
+
+    <div id="result" class="hidden">
+      <p>Yayyy, I’ll see you then 💖</p>
+      <a href="https://maps.app.goo.gl/mV4ChtmGdvDHFikH7" target="_blank">Open Location 📍</a>
+    </div>
+  </div>
+
+  <script>
+    function nextScreen() {
+      document.getElementById('screen1').classList.add('hidden');
+      document.getElementById('screen2').classList.remove('hidden');
+    }
+
+    function nextScreen2() {
+      document.getElementById('screen2').classList.add('hidden');
+      document.getElementById('screen3').classList.remove('hidden');
+    }
+
+    function showLocation() {
+      document.getElementById('result').classList.remove('hidden');
+    }
+
+    const noBtn = document.getElementById('noBtn');
+
+    function moveButton() {
+      const x = Math.random() * 200;
+      const y = Math.random() * 150;
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+
+    noBtn.addEventListener('mouseenter', moveButton);
+    noBtn.addEventListener('click', moveButton);
+  </script>
+
+</body>
+</html>
